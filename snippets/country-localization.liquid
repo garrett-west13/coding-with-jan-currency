@@ -33,11 +33,11 @@
     aria-controls="{{ localPosition }}-country-results"
     aria-describedby="{{ localPosition }}Label"
   >
+  <img
+  class="flag-icon"
+  src="{{ localization.country.iso_code | downcase | append: '.svg' | asset_url }}"
+  > 
   <span>           
-      <img
-      class="flag-icon"
-      src="{{ localization.country.iso_code | downcase | append: '.svg' | asset_url }}"
-      > 
       {{- localization.country.name }} |
       {{ localization.country.currency.iso_code }}
       {{ localization.country.currency.symbol -}}
