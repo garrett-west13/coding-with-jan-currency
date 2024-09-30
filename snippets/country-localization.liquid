@@ -33,7 +33,11 @@
     aria-controls="{{ localPosition }}-country-results"
     aria-describedby="{{ localPosition }}Label"
   >
-    <span>      
+  <span>           
+      <img
+      class="flag-icon"
+      src="{{ localization.country.iso_code | downcase | append: '.svg' | asset_url }}"
+      > 
       {{- localization.country.name }} |
       {{ localization.country.currency.iso_code }}
       {{ localization.country.currency.symbol -}}
@@ -140,7 +144,10 @@
               >
                 {{- 'icon-checkmark.svg' | inline_asset_content -}}
               </span>
-              
+              <img
+              class="flag-icon"
+              src="{{ country.iso_code | downcase | append: '.svg' | asset_url }}"
+              > 
               <span class="country">{{- country.name }}</span>
               <span class="localization-form__currency motion-reduce{% unless show_currencies %} hidden{% endunless %}">
                 {{ country.currency.iso_code }}
